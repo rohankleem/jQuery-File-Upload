@@ -74,7 +74,7 @@ class UploadHandler(webapp2.RequestHandler):
     def handle_upload(self):
         results = []
         blob_keys = []
-        for name, fieldStorage in self.request.POST.items():
+        for _, fieldStorage in self.request.POST.items():
             if type(fieldStorage) is unicode:
                 continue
             result = {}
